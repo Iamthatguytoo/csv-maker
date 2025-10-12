@@ -315,5 +315,9 @@ class csv_maker:
         for row in self.entries:
             row_data = [entry.get() for entry in row]
             data.append(row_data)
+
+        if any(len(row) != len(self.columns) for row in data):
+          messagebox.showerror("Error", "Mismatch between data columns and column headers.")
+          return
         
         save_data_as_csv(data, self.columns)
