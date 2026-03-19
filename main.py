@@ -1,7 +1,7 @@
-import tkinter as tk
+import customtkinter as ctk
 from ui.app import csv_maker
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = csv_maker(root)
+    root = ctk.CTk()
+    app = csv_maker(root=root)
     root.mainloop()
